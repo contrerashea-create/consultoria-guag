@@ -197,7 +197,7 @@ export default function Home() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="vbreak-img"
-          src="https://images.pexels.com/photos/13718270/pexels-photo-13718270.jpeg?auto=compress&cs=tinysrgb&w=1920&h=500&dpr=1"
+          src="/vbreak.jpg"
           alt="Ruinas mayas en la costa"
         />
         <div className="vbreak-overlay" />

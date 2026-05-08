@@ -102,7 +102,7 @@ input, textarea, select, button { font-family: inherit; }
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    url('https://images.pexels.com/photos/4700267/pexels-photo-4700267.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1')
+    url('/hero.jpg')
     center/cover no-repeat;
 }
 .hero-overlay {
