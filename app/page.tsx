@@ -1,3 +1,5 @@
+import { HEASticker } from './components/HEASticker'
+
 const AREAS = [
   "Derechos Humanos","Derecho Constitucional","Derecho Cultural",
   "Derecho Indígena","Derecho Civil","Derecho Administrativo","Peritaje Cultural",
@@ -327,6 +329,8 @@ export default function Home() {
           <span className="footer-copy">© 2025 Guagnelli Consultoría Jurídica Cultural</span>
         </div>
       </footer>
+
+      <HEASticker />
     </>
   );
 }
