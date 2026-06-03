@@ -13,7 +13,7 @@ export default function Nosotros() {
   return (
     <>
       <section style={{ background: 'var(--warm)' }}>
-        <div className="about-section" style={{ paddingTop: 'calc(9rem + 64px)' }}>
+        <div className="about-section" style={{ paddingTop: 'calc(9rem + 80px)' }}>
           <div className="about-img-wrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="about-img" src="/piramide.png" alt="Pirámide de Teotihuacan" />

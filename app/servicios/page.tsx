@@ -16,7 +16,7 @@ const SERVICES = [
 export default function Servicios() {
   return (
     <>
-      <section className="services-section" style={{ paddingTop: 'calc(8rem + 64px)' }}>
+      <section className="services-section" style={{ paddingTop: 'calc(8rem + 80px)' }}>
         <div className="services-inner">
           <div className="services-head">
             <h2 className="services-title">Nuestros<br />Servicios</h2>

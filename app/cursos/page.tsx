@@ -12,7 +12,7 @@ const CURSOS = [
 
 export default function Cursos() {
   return (
-    <section className="cursos-section" style={{ paddingTop: 'calc(8rem + 64px)' }}>
+    <section className="cursos-section" style={{ paddingTop: 'calc(8rem + 80px)' }}>
       <div className="cursos-inner">
         <div className="cursos-head">
           <h2 className="cursos-title">Cursos &amp;<br />Talleres</h2>

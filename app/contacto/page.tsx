@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function Contacto() {
   return (
-    <section className="contact-section" style={{ paddingTop: 'calc(8rem + 64px)' }}>
+    <section className="contact-section" style={{ paddingTop: 'calc(8rem + 80px)' }}>
       <div className="contact-inner">
         <div>
           <p className="contact-eyebrow">Contacto</p>

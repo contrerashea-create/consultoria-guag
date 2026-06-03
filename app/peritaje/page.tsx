@@ -13,7 +13,7 @@ const PERITAJE_ITEMS = [
 
 export default function Peritaje() {
   return (
-    <section className="peritaje-section" style={{ paddingTop: 'calc(5rem + 64px)' }}>
+    <section className="peritaje-section" style={{ paddingTop: 'calc(5rem + 80px)' }}>
       <div className="peritaje-inner">
         <div className="peritaje-head">
           <h2 className="peritaje-title">Peritaje &amp;<br />Dictaminación<br />Pericial</h2>
