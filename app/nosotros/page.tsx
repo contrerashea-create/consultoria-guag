@@ -12,10 +12,10 @@ const AREAS = [
 ]
 
 const PUBLICO = [
-  { icon: "⚖️", title: "Comunidades indígenas y afromexicanas", desc: "Pueblos que requieren representación legal para defender sus derechos colectivos, territoriales y culturales." },
-  { icon: "🏛️", title: "Instituciones públicas y culturales", desc: "Dependencias de gobierno, museos, centros culturales y organismos como INAH, INBA, INPI e INDAUTOR." },
-  { icon: "🤝", title: "OSC y organizaciones civiles", desc: "Asociaciones, fundaciones y colectivos que trabajan en defensa de derechos humanos, cultura e interculturalidad." },
-  { icon: "🏢", title: "Sector privado", desc: "Empresas y particulares que necesitan navegar trámites culturales, patrimonio histórico, marcas colectivas o propiedad intelectual." },
+  { title: "Comunidades indígenas y afromexicanas", desc: "Pueblos que requieren representación legal para defender sus derechos colectivos, territoriales y culturales." },
+  { title: "Instituciones públicas y culturales", desc: "Dependencias de gobierno, museos, centros culturales y organismos como INAH, INBA, INPI e INDAUTOR." },
+  { title: "OSC y organizaciones civiles", desc: "Asociaciones, fundaciones y colectivos que trabajan en defensa de derechos humanos, cultura e interculturalidad." },
+  { title: "Sector privado", desc: "Empresas y particulares que necesitan navegar trámites culturales, patrimonio histórico, marcas colectivas o propiedad intelectual." },
 ]
 
 export default function Nosotros() {
@@ -95,16 +95,30 @@ export default function Nosotros() {
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
-            {PUBLICO.map(({ icon, title, desc }) => (
-              <div key={title} style={{ background: 'var(--off-wh)', border: '1px solid rgba(168,144,96,.15)', borderTop: '2px solid var(--gold)', padding: '2rem 2.2rem' }}>
-                <span style={{ fontSize: '1.6rem', display: 'block', marginBottom: '1rem' }}>{icon}</span>
-                <h3 style={{ fontFamily: 'var(--f-serif)', fontSize: '1.3rem', fontWeight: 600, color: 'var(--ink)', marginBottom: '.6rem' }}>{title}</h3>
+            {PUBLICO.map(({ title, desc }, i) => (
+              <div key={title} style={{ background: 'var(--off-wh)', border: '1px solid rgba(168,144,96,.12)', padding: '2rem 2.2rem', position: 'relative', overflow: 'hidden' }}>
+                <span style={{ fontFamily: 'var(--f-serif)', fontSize: '3rem', fontWeight: 600, color: 'rgba(168,144,96,.12)', lineHeight: 1, display: 'block', marginBottom: '.8rem', letterSpacing: '-.03em' }}>
+                  0{i + 1}
+                </span>
+                <h3 style={{ fontFamily: 'var(--f-serif)', fontSize: '1.2rem', fontWeight: 600, color: 'var(--ink)', marginBottom: '.6rem' }}>{title}</h3>
                 <p style={{ fontSize: '.85rem', color: 'var(--stone)', lineHeight: 1.75 }}>{desc}</p>
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, var(--gold), transparent)' }} />
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* ─── CORTE VISUAL ─── */}
+      <div className="vbreak">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="vbreak-img" src="/hero.jpg" alt="Tradición y cultura" />
+        <div className="vbreak-overlay" />
+        <div className="vbreak-body">
+          <p className="vbreak-quote">"La cultura y la diversidad cultural son derechos humanos irrenunciables."</p>
+          <span className="vbreak-source">Misión · Guagnelli Consultoría</span>
+        </div>
+      </div>
 
       {/* ─── MISIÓN / VISIÓN ─── */}
       <section className="mv-section">

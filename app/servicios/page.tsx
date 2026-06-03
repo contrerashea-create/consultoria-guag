@@ -38,8 +38,51 @@ function ServiceRow({ n, name, items }: { n: string; name: string; items: string
 export default function Servicios() {
   return (
     <>
+      {/* ─── HERO ─── */}
+      <section style={{ position: 'relative', background: 'var(--dark)', paddingTop: 'calc(7rem + 80px)', paddingBottom: '7rem', paddingLeft: '3.5rem', paddingRight: '3.5rem', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, transparent, var(--gold), var(--gold-lt), var(--gold), transparent)', zIndex: 2 }} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/hero.jpg"
+          alt=""
+          aria-hidden="true"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'sepia(20%) brightness(.35) contrast(1.1)', zIndex: 0 }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(18,15,10,.95) 0%, rgba(18,15,10,.55) 100%)', zIndex: 1 }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'end' }}>
+          <div>
+            <p style={{ fontSize: '.58rem', fontWeight: 700, letterSpacing: '.22em', textTransform: 'uppercase' as const, color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '.7rem', marginBottom: '2rem' }}>
+              <span style={{ width: 22, height: 1, background: 'var(--gold)', display: 'inline-block' }} />
+              Representación integral
+            </p>
+            <h1 style={{ fontFamily: 'var(--f-serif)', fontSize: 'clamp(3rem, 5.5vw, 6rem)', fontWeight: 600, lineHeight: .93, color: '#FAF6F0', letterSpacing: '-.01em' }}>
+              Servicios<br /><em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>Jurídicos</em>
+            </h1>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column' as const, justifyContent: 'flex-end', gap: '2rem' }}>
+            <p style={{ fontSize: '.95rem', color: 'rgba(250,246,240,.4)', lineHeight: 1.85 }}>
+              Atención personalizada en las áreas del derecho que más impactan a personas, familias, organizaciones y empresas — con el enfoque intercultural que nos distingue.
+            </p>
+            <div style={{ display: 'flex', gap: '2rem', fontSize: '.72rem', fontWeight: 600, letterSpacing: '.12em', textTransform: 'uppercase' as const, color: 'rgba(168,144,96,.5)' }}>
+              <span>05 servicios generales</span>
+              <span style={{ color: 'rgba(168,144,96,.25)' }}>·</span>
+              <span>03 especializados</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MARQUEE ─── */}
+      <div className="marquee-wrap">
+        <div className="marquee-track" aria-hidden="true">
+          {['Derecho Civil', 'Derecho Laboral', 'Derecho Administrativo', 'Propiedad Intelectual', 'Derecho Constitucional', 'Derecho Cultural', 'Derecho Indígena', 'Peritaje Cultural', 'Derecho Civil', 'Derecho Laboral', 'Derecho Administrativo', 'Propiedad Intelectual', 'Derecho Constitucional', 'Derecho Cultural', 'Derecho Indígena', 'Peritaje Cultural'].map((k, i, arr) => (
+            <span key={i} className="marquee-text">{k}{i < arr.length - 1 ? '  ·  ' : ''}</span>
+          ))}
+        </div>
+      </div>
+
       {/* ─── BLOQUE GENERAL ─── */}
-      <section className="services-section" style={{ paddingTop: 'calc(8rem + 80px)' }}>
+      <section className="services-section">
         <div className="services-inner">
           <div className="services-head">
             <div>
@@ -59,16 +102,18 @@ export default function Servicios() {
         </div>
       </section>
 
-      {/* ─── SEPARADOR ESPECIALIZADO ─── */}
-      <div style={{ background: 'var(--dark)', padding: '4rem 3.5rem' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', gap: '3rem' }}>
-          <div style={{ flexShrink: 0 }}>
-            <span style={{ fontSize: '.58rem', fontWeight: 700, letterSpacing: '.22em', textTransform: 'uppercase' as const, color: 'var(--gold)', display: 'block', marginBottom: '.6rem' }}>El diferenciador</span>
-            <p style={{ fontFamily: 'var(--f-serif)', fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 600, color: 'var(--cream)', lineHeight: 1.15 }}>Servicios<br />Especializados</p>
-          </div>
-          <div style={{ width: 1, background: 'rgba(168,144,96,.2)', alignSelf: 'stretch', flexShrink: 0 }} />
-          <p style={{ fontSize: '.88rem', color: 'rgba(194,180,162,.5)', lineHeight: 1.85, maxWidth: 560 }}>
-            Pocas consultorías en México cubren el derecho cultural e indígena. Esta es la especialidad que distingue a Guagnelli — 25 años de experiencia en la intersección entre el derecho, la cultura y los pueblos.
+      {/* ─── SEPARADOR ESPECIALIZADO con imagen ─── */}
+      <div className="srv-diferenciador">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="srv-dif-photo" src="/piramide.png" alt="" aria-hidden="true" />
+        <div className="srv-dif-fade" />
+        <div className="srv-dif-body">
+          <span style={{ fontSize: '.58rem', fontWeight: 700, letterSpacing: '.22em', textTransform: 'uppercase' as const, color: 'var(--gold)', display: 'block', marginBottom: '1rem' }}>El diferenciador</span>
+          <p style={{ fontFamily: 'var(--f-serif)', fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', fontWeight: 600, color: '#FAF6F0', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Servicios<br />Especializados
+          </p>
+          <p style={{ fontSize: '.88rem', color: 'rgba(194,180,162,.5)', lineHeight: 1.85, maxWidth: 460 }}>
+            Pocas consultorías en México cubren el derecho cultural e indígena. Esta es la especialidad que distingue a Guagnelli — 25 años en la intersección entre el derecho, la cultura y los pueblos.
           </p>
         </div>
       </div>

@@ -1,33 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import FaqAccordion from './FaqAccordion'
 
 export const metadata: Metadata = {
   title: 'Derecho Cultural · Guagnelli | Consultoría Jurídica Cultural',
   description: 'Asesoría especializada en derecho cultural, patrimonio tangible e intangible, derechos culturales y memoria histórica en México.',
 }
-
-const FAQ = [
-  {
-    q: '¿Qué pasa si quiero remodelar un inmueble en el Centro Histórico?',
-    a: 'Los inmuebles ubicados en zonas de monumentos históricos están sujetos a la Ley Federal sobre Monumentos y Zonas Arqueológicos. Cualquier modificación requiere autorización del INAH. Te acompañamos en todo el proceso de trámite y representación ante la institución.',
-  },
-  {
-    q: '¿Cómo puedo importar o exportar una obra de arte?',
-    a: 'La importación y exportación de bienes culturales en México está regulada por la Secretaría de Cultura y el INAH. Existen restricciones específicas para piezas prehispánicas, coloniales y de autor. Analizamos tu caso y gestionamos los permisos correspondientes.',
-  },
-  {
-    q: '¿Qué son los derechos culturales y cómo me afectan?',
-    a: 'Los derechos culturales son derechos humanos reconocidos en la Constitución y tratados internacionales. Incluyen el derecho a participar en la vida cultural, acceder al patrimonio y que se respete tu identidad cultural. Son exigibles ante tribunales nacionales e internacionales.',
-  },
-  {
-    q: '¿Puedo proteger legalmente las tradiciones o conocimientos de mi comunidad?',
-    a: 'Sí. A través del derecho indígena y la propiedad intelectual colectiva es posible proteger conocimientos tradicionales, expresiones culturales y recursos genéticos. El proceso varía según el tipo de conocimiento y la comunidad involucrada.',
-  },
-  {
-    q: '¿Qué hago si una institución violó los derechos culturales de mi comunidad?',
-    a: 'Existen vías administrativas y judiciales para exigir la restitución de derechos culturales. Desde quejas ante comisiones de derechos humanos hasta amparos y acciones ante organismos internacionales. Evaluamos el caso y definimos la estrategia más efectiva.',
-  },
-]
 
 const RAMAS = [
   { title: 'Patrimonio Cultural', desc: 'Tangible (monumentos, zonas arqueológicas, museos) e intangible (tradiciones, lenguas, rituales, conocimientos).' },
@@ -41,10 +19,18 @@ const RAMAS = [
 export default function DerechoCultural() {
   return (
     <>
-      {/* ─── HERO ─── */}
-      <section style={{ background: 'var(--dark)', paddingTop: 'calc(7rem + 80px)', paddingBottom: '7rem', paddingLeft: '3.5rem', paddingRight: '3.5rem', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, transparent, var(--gold), var(--gold-lt), var(--gold), transparent)' }} />
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      {/* ─── HERO con imagen de fondo ─── */}
+      <section style={{ position: 'relative', background: 'var(--dark)', paddingTop: 'calc(7rem + 80px)', paddingBottom: '7rem', paddingLeft: '3.5rem', paddingRight: '3.5rem', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, transparent, var(--gold), var(--gold-lt), var(--gold), transparent)', zIndex: 2 }} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/vbreak.jpg"
+          alt=""
+          aria-hidden="true"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'sepia(20%) brightness(.4) contrast(1.1)', zIndex: 0 }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(18,15,10,.95) 0%, rgba(18,15,10,.65) 100%)', zIndex: 1 }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <p style={{ fontSize: '.58rem', fontWeight: 700, letterSpacing: '.22em', textTransform: 'uppercase', color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '.7rem', marginBottom: '2rem' }}>
             <span style={{ width: 22, height: 1, background: 'var(--gold)', display: 'inline-block' }} />
             El diferenciador
@@ -59,9 +45,24 @@ export default function DerechoCultural() {
         </div>
       </section>
 
-      {/* ─── QUÉ ES ─── */}
+      {/* ─── QUÉ ES: imagen izquierda + texto derecha ─── */}
       <section style={{ background: 'var(--warm)', padding: '8rem 3.5rem' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'start' }}>
+        <div className="dc-quees-grid" style={{ maxWidth: 1200, margin: '0 auto' }}>
+
+          {/* Imagen */}
+          <div style={{ position: 'relative' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="dc-quees-img"
+              src="/piramide.png"
+              alt="Pirámide de Teotihuacan"
+            />
+            <div style={{ position: 'absolute', bottom: '1.5rem', right: 0, background: 'var(--gold)', color: 'var(--dark)', padding: '.6rem 1.4rem', fontFamily: 'var(--f-serif)', fontSize: '.85rem', fontWeight: 700, letterSpacing: '.02em' }}>
+              25 años de práctica
+            </div>
+          </div>
+
+          {/* Texto */}
           <div>
             <p style={{ fontSize: '.6rem', fontWeight: 700, letterSpacing: '.24em', textTransform: 'uppercase' as const, color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '.7rem', marginBottom: '1.3rem' }}>
               <span style={{ width: 22, height: 1, background: 'var(--gold)', display: 'inline-block' }} />
@@ -77,19 +78,43 @@ export default function DerechoCultural() {
               Pocas consultorías en México tienen la especialización para atender estos casos. Guagnelli lleva 25 años en la intersección entre el derecho, la cultura y los pueblos.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'rgba(168,144,96,.15)', border: '1px solid rgba(168,144,96,.15)' }}>
+        </div>
+      </section>
+
+      {/* ─── RAMAS: grid 3 columnas ─── */}
+      <section style={{ background: 'var(--cream)', padding: '7rem 3.5rem' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <p style={{ fontSize: '.6rem', fontWeight: 700, letterSpacing: '.24em', textTransform: 'uppercase' as const, color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '.7rem', marginBottom: '1.2rem' }}>
+            <span style={{ width: 22, height: 1, background: 'var(--gold)', display: 'inline-block' }} />
+            Ramas principales
+          </p>
+          <h2 style={{ fontFamily: 'var(--f-serif)', fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 600, lineHeight: 1.05, color: 'var(--ink)', marginBottom: '4rem' }}>
+            Áreas de<br />especialización
+          </h2>
+          <div className="dc-ramas-grid">
             {RAMAS.map(({ title, desc }) => (
-              <div key={title} style={{ background: 'var(--warm)', padding: '1.8rem', transition: 'background .2s' }}>
+              <div key={title} style={{ borderLeft: '2px solid var(--gold)', paddingLeft: '1.5rem' }}>
                 <h3 style={{ fontFamily: 'var(--f-serif)', fontSize: '1.1rem', fontWeight: 600, color: 'var(--ink)', marginBottom: '.6rem' }}>{title}</h3>
-                <p style={{ fontSize: '.82rem', color: 'var(--stone)', lineHeight: 1.7 }}>{desc}</p>
+                <p style={{ fontSize: '.82rem', color: 'var(--stone)', lineHeight: 1.75 }}>{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ─── CORTE VISUAL con hero.jpg ─── */}
+      <div className="vbreak">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="vbreak-img" src="/hero.jpg" alt="Patrimonio cultural mexicano" />
+        <div className="vbreak-overlay" />
+        <div className="vbreak-body">
+          <p className="vbreak-quote">"La cultura es un derecho humano — y como tal, es exigible ante la ley."</p>
+          <span className="vbreak-source">Aldo A. Guagnelli Nuñez</span>
+        </div>
+      </div>
+
       {/* ─── FAQ ─── */}
-      <section style={{ background: 'var(--cream)', padding: '8rem 3.5rem' }}>
+      <section style={{ background: 'var(--warm)', padding: '8rem 3.5rem' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'end', marginBottom: '4rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(168,144,96,.18)' }}>
             <div>
@@ -105,14 +130,7 @@ export default function DerechoCultural() {
               El derecho cultural aparece en situaciones cotidianas que muchas veces no reconocemos como legales. Aquí algunos ejemplos reales.
             </p>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            {FAQ.map(({ q, a }, i) => (
-              <div key={i} style={{ borderBottom: '1px solid rgba(168,144,96,.18)', padding: '2rem 0' }}>
-                <h3 style={{ fontFamily: 'var(--f-serif)', fontSize: '1.2rem', fontWeight: 600, color: 'var(--ink)', marginBottom: '1rem' }}>{q}</h3>
-                <p style={{ fontSize: '.88rem', color: 'var(--stone)', lineHeight: 1.85 }}>{a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion />
         </div>
       </section>
 
