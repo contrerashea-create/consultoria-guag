@@ -46,7 +46,7 @@ export function Navbar() {
           <Link href="/" className="nav-logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logoo.png"
+              src="/website/logoo.png"
               alt="Guagnelli"
               style={{ height: '68px', width: 'auto', filter: logoFilter, transition: 'filter .35s ease' }}
             />

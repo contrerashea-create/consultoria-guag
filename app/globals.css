@@ -95,7 +95,7 @@ input, textarea, select, button { font-family: inherit; }
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    url('/hero.jpg')
+    url('/website/1.png')
     center/cover no-repeat;
 }
 .hero-overlay {
