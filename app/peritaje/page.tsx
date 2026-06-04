@@ -4,6 +4,15 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Peritaje Cultural · Guagnelli | Consultoría Jurídica Cultural',
   description: 'Dictámenes periciales antropológicos y etnohistóricos para procesos legales. Análisis de documentos históricos y transcripción paleográfica.',
+  openGraph: {
+    title: 'Peritaje Cultural · Guagnelli | Consultoría Jurídica Cultural',
+    description: 'Dictámenes periciales antropológicos y etnohistóricos para procesos legales. Análisis de documentos históricos y transcripción paleográfica.',
+    url: 'https://consultoria-guag.vercel.app/peritaje',
+    siteName: 'Guagnelli · Consultoría Jurídica Cultural',
+    images: [{ url: 'https://consultoria-guag.vercel.app/website/1.png', width: 1200, height: 630, alt: 'Peritaje Cultural · Guagnelli Consultoría Jurídica Cultural' }],
+    locale: 'es_MX',
+    type: 'website',
+  },
 }
 
 const DISCIPLINAS = [

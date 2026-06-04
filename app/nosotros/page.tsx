@@ -4,6 +4,15 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Nosotros · Guagnelli | Consultoría Jurídica Cultural',
   description: 'Conoce a Aldo A. Guagnelli Nuñez, abogado y etnohistoriador con 25 años de experiencia en derecho cultural, indígena y derechos humanos.',
+  openGraph: {
+    title: 'Nosotros · Guagnelli | Consultoría Jurídica Cultural',
+    description: 'Conoce a Aldo A. Guagnelli Nuñez, abogado y etnohistoriador con 25 años de experiencia en derecho cultural, indígena y derechos humanos.',
+    url: 'https://consultoria-guag.vercel.app/nosotros',
+    siteName: 'Guagnelli · Consultoría Jurídica Cultural',
+    images: [{ url: 'https://consultoria-guag.vercel.app/website/1.png', width: 1200, height: 630, alt: 'Nosotros · Guagnelli Consultoría Jurídica Cultural' }],
+    locale: 'es_MX',
+    type: 'website',
+  },
 }
 
 const AREAS = [

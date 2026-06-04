@@ -1,5 +1,20 @@
+import type { Metadata } from 'next'
 import { HEASticker } from './components/HEASticker'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Guagnelli · Consultoría Jurídica Cultural',
+  description: 'Asesoría jurídica especializada en derecho cultural, indígena y peritaje. 25 años de experiencia en México. Primera orientación sin costo.',
+  openGraph: {
+    title: 'Guagnelli · Consultoría Jurídica Cultural',
+    description: 'Asesoría jurídica especializada en derecho cultural, indígena y peritaje. 25 años de experiencia en México.',
+    url: 'https://consultoria-guag.vercel.app',
+    siteName: 'Guagnelli · Consultoría Jurídica Cultural',
+    images: [{ url: 'https://consultoria-guag.vercel.app/website/1.png', width: 1200, height: 630, alt: 'Guagnelli Consultoría Jurídica Cultural' }],
+    locale: 'es_MX',
+    type: 'website',
+  },
+}
 
 export default function Home() {
   return (

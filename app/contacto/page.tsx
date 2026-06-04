@@ -4,6 +4,15 @@ import ContactForm from './ContactForm'
 export const metadata: Metadata = {
   title: 'Contacto · Guagnelli | Consultoría Jurídica Cultural',
   description: 'Solicita una consulta con Guagnelli Consultoría Jurídica Cultural. Primera orientación sin costo. CDMX y República Mexicana.',
+  openGraph: {
+    title: 'Contacto · Guagnelli | Consultoría Jurídica Cultural',
+    description: 'Solicita una consulta. Primera orientación sin costo. CDMX y República Mexicana.',
+    url: 'https://consultoria-guag.vercel.app/contacto',
+    siteName: 'Guagnelli · Consultoría Jurídica Cultural',
+    images: [{ url: 'https://consultoria-guag.vercel.app/website/1.png', width: 1200, height: 630, alt: 'Contacto · Guagnelli Consultoría Jurídica Cultural' }],
+    locale: 'es_MX',
+    type: 'website',
+  },
 }
 
 export default function Contacto() {

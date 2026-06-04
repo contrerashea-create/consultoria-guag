@@ -4,6 +4,15 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Servicios · Guagnelli | Consultoría Jurídica Cultural',
   description: 'Representación jurídica integral con perspectiva intercultural. Derecho cultural, indígena, civil, administrativo y constitucional.',
+  openGraph: {
+    title: 'Servicios · Guagnelli | Consultoría Jurídica Cultural',
+    description: 'Representación jurídica integral con perspectiva intercultural. Derecho cultural, indígena, civil, administrativo y constitucional.',
+    url: 'https://consultoria-guag.vercel.app/servicios',
+    siteName: 'Guagnelli · Consultoría Jurídica Cultural',
+    images: [{ url: 'https://consultoria-guag.vercel.app/website/1.png', width: 1200, height: 630, alt: 'Servicios · Guagnelli Consultoría Jurídica Cultural' }],
+    locale: 'es_MX',
+    type: 'website',
+  },
 }
 
 const GENERAL = [

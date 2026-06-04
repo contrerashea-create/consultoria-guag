@@ -4,6 +4,15 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Portafolio · Guagnelli | Consultoría Jurídica Cultural',
   description: 'Casos representativos y trabajos realizados por Guagnelli Consultoría Jurídica Cultural.',
+  openGraph: {
+    title: 'Portafolio · Guagnelli | Consultoría Jurídica Cultural',
+    description: 'Casos representativos y trabajos realizados por Guagnelli Consultoría Jurídica Cultural.',
+    url: 'https://consultoria-guag.vercel.app/portafolio',
+    siteName: 'Guagnelli · Consultoría Jurídica Cultural',
+    images: [{ url: 'https://consultoria-guag.vercel.app/website/1.png', width: 1200, height: 630, alt: 'Portafolio · Guagnelli Consultoría Jurídica Cultural' }],
+    locale: 'es_MX',
+    type: 'website',
+  },
 }
 
 const CASOS = [

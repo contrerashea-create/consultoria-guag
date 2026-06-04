@@ -5,6 +5,15 @@ import FaqAccordion from './FaqAccordion'
 export const metadata: Metadata = {
   title: 'Derecho Cultural · Guagnelli | Consultoría Jurídica Cultural',
   description: 'Asesoría especializada en derecho cultural, patrimonio tangible e intangible, derechos culturales y memoria histórica en México.',
+  openGraph: {
+    title: 'Derecho Cultural · Guagnelli | Consultoría Jurídica Cultural',
+    description: 'Asesoría especializada en derecho cultural, patrimonio tangible e intangible, derechos culturales y memoria histórica en México.',
+    url: 'https://consultoria-guag.vercel.app/derecho-cultural',
+    siteName: 'Guagnelli · Consultoría Jurídica Cultural',
+    images: [{ url: 'https://consultoria-guag.vercel.app/website/1.png', width: 1200, height: 630, alt: 'Derecho Cultural · Guagnelli Consultoría Jurídica Cultural' }],
+    locale: 'es_MX',
+    type: 'website',
+  },
 }
 
 const RAMAS = [
@@ -96,6 +105,38 @@ export default function DerechoCultural() {
               <div key={title} style={{ borderLeft: '2px solid var(--gold)', paddingLeft: '1.5rem' }}>
                 <h3 style={{ fontFamily: 'var(--f-serif)', fontSize: '1.1rem', fontWeight: 600, color: 'var(--ink)', marginBottom: '.6rem' }}>{title}</h3>
                 <p style={{ fontSize: '.82rem', color: 'var(--stone)', lineHeight: 1.75 }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CUÁNDO APLICA ─── */}
+      <section style={{ background: 'var(--warm)', padding: '7rem 3.5rem' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <p style={{ fontSize: '.6rem', fontWeight: 700, letterSpacing: '.24em', textTransform: 'uppercase' as const, color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '.7rem', marginBottom: '1.2rem' }}>
+            <span style={{ width: 22, height: 1, background: 'var(--gold)', display: 'inline-block' }} />
+            Situaciones concretas
+          </p>
+          <h2 style={{ fontFamily: 'var(--f-serif)', fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 600, lineHeight: 1.05, color: 'var(--ink)', marginBottom: '1rem' }}>
+            ¿Cuándo aplica<br />el derecho cultural?
+          </h2>
+          <p style={{ fontSize: '.9rem', color: 'var(--stone)', lineHeight: 1.8, maxWidth: 560, marginBottom: '4rem' }}>
+            Aparece en más situaciones cotidianas de lo que parece. Estas son algunas de las más frecuentes.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+            {[
+              { icon: '🏛', title: 'Trámites en zonas históricas', desc: 'Intervenciones, remodelaciones o negocios en centros históricos o zonas con declaratoria de patrimonio.' },
+              { icon: '🎨', title: 'Importación y exportación de arte', desc: 'Movimiento de piezas artísticas, antigüedades o bienes culturales a través de aduanas nacionales e internacionales.' },
+              { icon: '🪶', title: 'Derechos de comunidades indígenas', desc: 'Defensa del territorio, lengua, tradiciones y formas de gobierno propias ante instituciones del Estado.' },
+              { icon: '📜', title: 'Propiedad intelectual colectiva', desc: 'Protección de artesanías, conocimientos tradicionales y expresiones culturales de pueblos y comunidades.' },
+              { icon: '🎭', title: 'Gestión de instituciones culturales', desc: 'Museos, galerías, fundaciones y centros culturales que necesitan navegar el marco normativo del sector.' },
+              { icon: '⚖️', title: 'Litigios por patrimonio cultural', desc: 'Conflictos ante tribunales o comisiones de derechos humanos relacionados con bienes o prácticas culturales.' },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} style={{ background: 'var(--cream)', border: '1px solid rgba(168,144,96,.15)', padding: '2rem', borderRadius: 2, transition: 'border-color .2s' }}>
+                <span style={{ fontSize: '1.6rem', display: 'block', marginBottom: '1rem' }}>{icon}</span>
+                <h3 style={{ fontFamily: 'var(--f-serif)', fontSize: '1rem', fontWeight: 600, color: 'var(--ink)', marginBottom: '.5rem', lineHeight: 1.3 }}>{title}</h3>
+                <p style={{ fontSize: '.8rem', color: 'var(--stone)', lineHeight: 1.75 }}>{desc}</p>
               </div>
             ))}
           </div>
