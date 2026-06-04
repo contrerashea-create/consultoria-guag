@@ -23,7 +23,7 @@ export async function POST(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY)
   const { error: emailError } = await resend.emails.send({
     from: 'Consultoría Guagnelli <onboarding@resend.dev>',
-    to: ['xons.juridica.cultural@gmail.com'],
+    to: ['cjc.guag@gmail.com'],
     replyTo: correo,
     subject: `Nueva consulta — ${area || 'General'}`,
     html: `

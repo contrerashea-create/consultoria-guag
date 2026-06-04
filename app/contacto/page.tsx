@@ -19,12 +19,12 @@ export default function Contacto() {
           <div>
             <div className="contact-row">
               <span className="contact-lbl">Teléfono</span>
-              <span className="contact-val"><a href="tel:5523214441">55 2321 4441</a></span>
+              <span className="contact-val"><a href="tel:4425619711">442 561 9711</a></span>
             </div>
             <div className="contact-row">
               <span className="contact-lbl">Correo</span>
               <span className="contact-val">
-                <a href="mailto:xons.juridica.cultural@gmail.com">xons.juridica.cultural@gmail.com</a>
+                <a href="mailto:cjc.guag@gmail.com">cjc.guag@gmail.com</a>
               </span>
             </div>
             <div className="contact-row">

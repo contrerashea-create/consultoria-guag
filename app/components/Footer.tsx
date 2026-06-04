@@ -51,13 +51,13 @@ export function Footer() {
 
           <div className="footer-contact-block">
             <p className="footer-label">Contacto directo</p>
-            <a href="tel:5523214441" className="footer-contact-line">
+            <a href="tel:4425619711" className="footer-contact-line">
               <span className="footer-contact-key">Tel.</span>
-              55 2321 4441
+              442 561 9711
             </a>
-            <a href="mailto:xons.juridica.cultural@gmail.com" className="footer-contact-line">
+            <a href="mailto:cjc.guag@gmail.com" className="footer-contact-line">
               <span className="footer-contact-key">Email</span>
-              xons.juridica.cultural@gmail.com
+              cjc.guag@gmail.com
             </a>
             <span className="footer-contact-line" style={{ cursor: 'default' }}>
               <span className="footer-contact-key">Zona</span>
