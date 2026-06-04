@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const NAV = [
+const PAGINAS = [
   { label: 'Nosotros',         href: '/nosotros' },
   { label: 'Servicios',        href: '/servicios' },
   { label: 'Derecho Cultural', href: '/derecho-cultural' },
@@ -10,71 +10,101 @@ const NAV = [
   { label: 'Contacto',         href: '/contacto' },
 ]
 
+const SERVICIOS = [
+  { label: 'Derecho Civil',          href: '/servicios' },
+  { label: 'Derecho Laboral',        href: '/servicios' },
+  { label: 'Derecho Cultural',       href: '/servicios' },
+  { label: 'Derecho Indígena',       href: '/servicios' },
+  { label: 'Propiedad Intelectual',  href: '/servicios' },
+  { label: 'Peritaje Cultural',      href: '/peritaje' },
+]
+
+const FORMACION = [
+  { label: 'Cursos & Talleres', href: '/cursos' },
+  { label: 'Peritaje Cultural', href: '/peritaje' },
+]
+
 export function Footer() {
   return (
-    <footer className="footer">
+    <footer>
 
-      {/* ─── Cuerpo principal ─── */}
+      {/* ─── Cuerpo principal — fondo claro para contrastar con el CTA oscuro ─── */}
       <div className="footer-body">
+        <div className="footer-body-inner">
 
-        {/* Columna izquierda — identidad */}
-        <div className="footer-identity">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/website/logoo.png"
-            alt="Guagnelli Consultoría Jurídica Cultural"
-            className="footer-logo"
-          />
-          <div className="footer-wordmark">
-            <span className="footer-wordmark-main">Guagnelli</span>
-            <span className="footer-wordmark-sub">Consultoría Jurídica Cultural</span>
-          </div>
-          <p className="footer-tagline">
-            Derecho al servicio<br />de la cultura y los pueblos.
-          </p>
-        </div>
-
-        {/* Divisor vertical */}
-        <div className="footer-divider-v" />
-
-        {/* Columna derecha — navegación y contacto */}
-        <div className="footer-info">
-
-          <div className="footer-nav-block">
-            <p className="footer-label">Páginas</p>
-            <nav className="footer-nav">
-              {NAV.map(({ label, href }) => (
-                <Link key={href} href={href} className="footer-nav-link">{label}</Link>
+          {/* Col 1 — Páginas */}
+          <div className="footer-col">
+            <p className="footer-col-label">Páginas</p>
+            <nav className="footer-col-links">
+              {PAGINAS.map(({ label, href }) => (
+                <Link key={href + label} href={href} className="footer-col-link">{label}</Link>
               ))}
             </nav>
           </div>
 
-          <div className="footer-contact-block">
-            <p className="footer-label">Contacto directo</p>
-            <a href="tel:4425619711" className="footer-contact-line">
-              <span className="footer-contact-key">Tel.</span>
-              442 561 9711
-            </a>
-            <a href="mailto:cjc.guag@gmail.com" className="footer-contact-line">
-              <span className="footer-contact-key">Email</span>
-              cjc.guag@gmail.com
-            </a>
-            <span className="footer-contact-line" style={{ cursor: 'default' }}>
-              <span className="footer-contact-key">Zona</span>
-              CDMX y República Mexicana
-            </span>
-            <Link href="/contacto" className="footer-cta-btn">
-              Solicitar consulta →
-            </Link>
+          {/* Col 2 — Servicios */}
+          <div className="footer-col">
+            <p className="footer-col-label">Servicios</p>
+            <nav className="footer-col-links">
+              {SERVICIOS.map(({ label, href }) => (
+                <Link key={label} href={href} className="footer-col-link">{label}</Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Col 3 — Formación */}
+          <div className="footer-col">
+            <p className="footer-col-label">Formación</p>
+            <nav className="footer-col-links">
+              {FORMACION.map(({ label, href }) => (
+                <Link key={label} href={href} className="footer-col-link">{label}</Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Col 4 — Contacto */}
+          <div className="footer-col">
+            <p className="footer-col-label">Contacto directo</p>
+            <div className="footer-col-links">
+              <a href="mailto:cjc.guag@gmail.com" className="footer-col-link footer-col-link--contact">
+                cjc.guag@gmail.com
+              </a>
+              <a href="tel:4425619711" className="footer-col-link footer-col-link--contact">
+                442 561 9711
+              </a>
+              <span className="footer-col-link footer-col-link--muted">CDMX y Rep. Mexicana</span>
+              <Link href="/contacto" className="footer-cta-btn">
+                Solicitar consulta →
+              </Link>
+            </div>
           </div>
 
         </div>
       </div>
 
-      {/* ─── Barra inferior ─── */}
+      {/* ─── Barra inferior oscura ─── */}
       <div className="footer-bar">
-        <span>© 2025 Guagnelli Consultoría Jurídica Cultural · Todos los derechos reservados</span>
-        <span>Ciudad de México, México</span>
+        <div className="footer-bar-inner">
+
+          <div className="footer-bar-brand">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/website/logoo.png"
+              alt="Guagnelli"
+              className="footer-bar-logo"
+            />
+            <div className="footer-bar-wordmark">
+              <span className="footer-bar-name">Guagnelli</span>
+              <span className="footer-bar-sub">Consultoría Jurídica Cultural</span>
+            </div>
+          </div>
+
+          <div className="footer-bar-right">
+            <span className="footer-bar-copy">© 2026 Guagnelli Consultoría Jurídica Cultural · Todos los derechos reservados</span>
+            <span className="footer-bar-copy">Ciudad de México, México</span>
+          </div>
+
+        </div>
       </div>
 
     </footer>
