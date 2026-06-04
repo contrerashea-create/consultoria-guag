@@ -1,15 +1,27 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
+import { supabaseAdmin } from '@/lib/supabase'
 
 export async function POST(req: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
   const { nombre, correo, area, mensaje } = await req.json()
 
   if (!nombre || !correo || !mensaje) {
     return NextResponse.json({ error: 'Campos requeridos faltantes' }, { status: 400 })
   }
 
-  const { error } = await resend.emails.send({
+  // 1. Guardar en Supabase
+  const { error: dbError } = await supabaseAdmin()
+    .from('consultas')
+    .insert({ nombre, correo, area: area || null, mensaje })
+
+  if (dbError) {
+    console.error('Supabase error:', dbError)
+    return NextResponse.json({ error: 'Error al guardar la consulta' }, { status: 500 })
+  }
+
+  // 2. Enviar correo con Resend
+  const resend = new Resend(process.env.RESEND_API_KEY)
+  const { error: emailError } = await resend.emails.send({
     from: 'Consultoría Guagnelli <onboarding@resend.dev>',
     to: ['xons.juridica.cultural@gmail.com'],
     replyTo: correo,
@@ -31,8 +43,9 @@ export async function POST(req: Request) {
     `,
   })
 
-  if (error) {
-    return NextResponse.json({ error: 'Error al enviar el correo' }, { status: 500 })
+  if (emailError) {
+    // La consulta ya quedó guardada — no falla el request por el correo
+    console.error('Resend error:', emailError)
   }
 
   return NextResponse.json({ ok: true })
