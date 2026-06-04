@@ -5,22 +5,13 @@ const PAGINAS = [
   { label: 'Servicios',        href: '/servicios' },
   { label: 'Derecho Cultural', href: '/derecho-cultural' },
   { label: 'Cursos',           href: '/cursos' },
-  { label: 'Peritaje',         href: '/peritaje' },
   { label: 'Portafolio',       href: '/portafolio' },
   { label: 'Contacto',         href: '/contacto' },
 ]
 
-const SERVICIOS = [
-  { label: 'Derecho Civil',          href: '/servicios' },
-  { label: 'Derecho Laboral',        href: '/servicios' },
-  { label: 'Derecho Cultural',       href: '/servicios' },
-  { label: 'Derecho Indígena',       href: '/servicios' },
-  { label: 'Propiedad Intelectual',  href: '/servicios' },
-  { label: 'Peritaje Cultural',      href: '/peritaje' },
-]
-
-const FORMACION = [
-  { label: 'Cursos & Talleres', href: '/cursos' },
+const ESPECIALIDADES = [
+  { label: 'Derecho Cultural',  href: '/servicios' },
+  { label: 'Derecho Indígena',  href: '/servicios' },
   { label: 'Peritaje Cultural', href: '/peritaje' },
 ]
 
@@ -42,21 +33,11 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Col 2 — Servicios */}
+          {/* Col 2 — Especialidades */}
           <div className="footer-col">
-            <p className="footer-col-label">Servicios</p>
+            <p className="footer-col-label">Especialidades</p>
             <nav className="footer-col-links">
-              {SERVICIOS.map(({ label, href }) => (
-                <Link key={label} href={href} className="footer-col-link">{label}</Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Col 3 — Formación */}
-          <div className="footer-col">
-            <p className="footer-col-label">Formación</p>
-            <nav className="footer-col-links">
-              {FORMACION.map(({ label, href }) => (
+              {ESPECIALIDADES.map(({ label, href }) => (
                 <Link key={label} href={href} className="footer-col-link">{label}</Link>
               ))}
             </nav>
