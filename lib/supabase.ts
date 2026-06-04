@@ -8,4 +8,4 @@ const anonKey    = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 export const supabaseAdmin = () => createClient(url, serviceKey)
 
 // Client/server: usa anon key (respeta RLS, seguro para datos públicos)
-export const supabase = createClient(url, anonKey)
+export const supabase = () => createClient(url, anonKey)
