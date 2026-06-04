@@ -892,31 +892,31 @@ footer { display: block; }
 .footer-body-inner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  gap: 4rem;
   max-width: 1200px; margin: 0 auto;
-  padding: 5.5rem 3.5rem 5rem;
+  padding: 7rem 3.5rem 6rem;
 }
 
 /* Columna */
 .footer-col { display: flex; flex-direction: column; }
 .footer-col-label {
   font-size: .55rem; font-weight: 700; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--gold);
-  margin-bottom: 1.8rem;
+  text-transform: uppercase; color: var(--stone);
+  margin-bottom: 2.2rem;
 }
-.footer-col-links { display: flex; flex-direction: column; gap: .9rem; }
+.footer-col-links { display: flex; flex-direction: column; gap: 1.4rem; }
 .footer-col-link {
   font-family: var(--f-serif);
-  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
   font-weight: 500; color: var(--ink);
-  text-decoration: none; line-height: 1.2;
+  text-decoration: none; line-height: 1.1;
   transition: color .2s;
 }
 .footer-col-link:hover { color: var(--gold); }
-.footer-col-link--contact { font-size: clamp(.85rem, 1.1vw, 1rem); }
+.footer-col-link--contact { font-size: clamp(1.1rem, 1.5vw, 1.5rem); }
 .footer-col-link--muted {
   font-family: var(--f-sans);
-  font-size: .75rem; color: var(--stone);
+  font-size: .78rem; color: var(--stone);
   cursor: default;
 }
 
